@@ -3,11 +3,21 @@ import java.util.Scanner;
 public class Factor {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
+        System.out.println("enter n :");
         int n=sc.nextInt();
-        System.out.println("all the factor of num "+n+" is ");
-        for(int i=1;i<=n;i++){
+        demo d=new demo();
+        d.fact(n);
+        
+        
+    }
+
+}
+class demo{
+    void fact(int n){
+        System.out.println("all the factor of "+n);
+       for(int i=1;i<=n;i++){
             if(n%i==0){
-                System.out.print(i+" ");
+                System.out.println(""+i);
             }
         }
     }

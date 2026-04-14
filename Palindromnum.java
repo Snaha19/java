@@ -4,7 +4,16 @@ public class Palindromnum {
     Scanner sc=new Scanner(System.in);
     System.out.println("enter any num to check");
     int num=sc.nextInt();
-    int n=num;
+    demo d=new demo();
+    d.pal(num);
+
+   }
+}
+
+  
+   class demo{
+    void pal(int n){
+    int num=n;
     int rev=0;
     while(n>0){
         int rem=n%10;
@@ -19,5 +28,6 @@ public class Palindromnum {
     else{
         System.out.println("not a palindrom");
     }
-   } 
 }
+   } 
+
