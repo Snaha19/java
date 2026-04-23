@@ -23,6 +23,7 @@ class demo{
             System.out.print(" "+j+",");
             j=j-3;
             
+          
 
 
 

@@ -24,8 +24,5 @@ class demo{
         }
     }
 
-    public void alpha_print() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'alpha_print'");
-    }
+    
 }

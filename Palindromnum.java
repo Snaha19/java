@@ -12,7 +12,7 @@ public class Palindromnum {
 
   
    class demo{
-    void pal(int n){
+    void pal(int n){ 
     int num=n;
     int rev=0;
     while(n>0){

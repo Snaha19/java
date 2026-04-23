@@ -8,7 +8,7 @@ public class sum_prime {
         demo obj=new demo();
         obj.check(n);
 
-         
+        
     }
 }
 class demo{

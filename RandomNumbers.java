@@ -14,7 +14,7 @@ public class RandomNumbers {
     //         System.out.println(num);
     //     }
     // }
-    public class RandomNumbers {
+    
 
     public static void generateRandomNumbers() {
 
@@ -23,7 +23,7 @@ public class RandomNumbers {
             System.out.println(num);
         }
     }
-
+    
  
 
     public static void main(String[] args) {
