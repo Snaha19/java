@@ -35,6 +35,7 @@ public class doubly_linklist {
       if (head== null){
         node.prev=null;
         head=node;
+        size++;
         return;
       }
 
@@ -56,7 +57,7 @@ public class doubly_linklist {
          return;
         
       }
-      if (position == size-1){
+      if (position == size){
         insert_last(val);
         return;
 
@@ -68,11 +69,42 @@ public class doubly_linklist {
       }
       Node node=new Node(val,temp.next,temp.prev);
 
+     
+      node.prev=temp;
+      node.next=temp.next;
+      temp.next.prev=node;
       temp.next=node;
      
       size++;
     }
+   public void insert_at_specific_value(int after,int val){
+    Node p=find(after);
 
+    if (p==null){
+      System.out.println("does not exist");
+      return;
+    }
+    Node node=new Node(val);
+    node.next=p.next;
+    p.next=node;
+    node.prev=p;
+     if(node.next!=null)
+       node.next.prev=node;
+
+
+
+   }
+   public Node find(int val){
+        Node temp=head;
+        while(temp!=null){
+            if(temp.val==val){
+                return temp;
+            }
+            temp=temp.next;
+        }
+        return null;
+
+    }
    public void display(){
      Node temp=head;
      Node last=null;
@@ -116,32 +148,6 @@ public class doubly_linklist {
   }
 
 }
-
-
-
-  public Node getHead() {
-    return head;
-  }
-
-  public void setHead(Node head) {
-    this.head = head;
-  }
-
-  public Node getTail() {
-    return tail;
-  }
-
-  public void setTail(Node tail) {
-    this.tail = tail;
-  }
-
-  public int getSize() {
-    return size;
-  }
-
-  public void setSize(int size) {
-    this.size = size;
-  }
  
 }
 
@@ -155,6 +161,7 @@ public class Main2{
         dl.insert_first(13);
         dl.insert_last(99);
         dl.insert_at_specific_index(999, 3);
+        dl.insert_at_specific_value(999, 55);
         dl.display();
     }
 }
