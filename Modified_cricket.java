@@ -1,11 +1,14 @@
 import java.util.Scanner;
 
 class Cricket{
+    
     static class Player{
         String name;
         int score;
 
         Player(){
+            this.name="";
+            this.score=0;
             
         }
 
@@ -14,22 +17,17 @@ class Cricket{
             this.score=score;
         }
     
+
     }
+ 
 
-    
-
-
-}
-
-
-public class Modified_cricket {
-    public static void main(String[] args) {
+    void take_input(){
         Scanner sc=new Scanner(System.in);
         System.out.println("enter number of player u want to enter");
         int size=sc.nextInt();
         sc.nextLine();
 
-        Cricket.Player[] players=new Cricket.Player[size];
+        Player[] players=new Player[size];
 
         for (int i=0;i<players.length;i++){
             System.out.println("enter name , score for player :"+(i+1));
@@ -50,6 +48,18 @@ public class Modified_cricket {
        }
 
        
+    }
+
+    
+
+
+}
+
+
+public class Modified_cricket {
+    public static void main(String[] args) {
+       Cricket c=new Cricket();
+       c.take_input();
 
     }
     
