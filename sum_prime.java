@@ -12,10 +12,10 @@ public class sum_prime {
     }
 }
 class demo{
-    void check(int n){
-        for(int i=1;i<=n/2;i++){
-            if(isprime(i) && isprime(n-i)){
-                System.out.println(n+" = "+i+" + "+(n-i));
+    void check(String word){
+        for(int i=1;i<=word/2;i++){
+            if(isprime(i) && isprime(word-i)){
+                System.out.println(word+" = "+i+" + "+(word-i));
             }
         }
             
@@ -31,6 +31,11 @@ class demo{
             }
             return true;
 
+    }
+
+    public void check(String word) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'check'");
     }
 
 }
