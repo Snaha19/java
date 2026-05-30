@@ -1,64 +1,50 @@
-import java.util.Scanner;
 
-public class registration {
+class registration{
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("name :");
-        String name=sc.nextLine();
-        //System.out.println(name);
-        System.out.println("email :");
-        String email=sc.nextLine();
-        //System.out.println(email);
-        System.out.println("password :");
-        String password=sc.nextLine();
-        //System.out.println(password);
+        demo d=new demo();
+        String password="Sn@h@123";
+        d.validatePassword(password);
+    }
+}
+class demo{
+ void validatePassword(String password){
 
-        validateEmail(email);
-        password(password);
+    boolean upper = false;
+    boolean lower = false;
+    boolean digit = false;
+    boolean special = false;
+
+    String symbols = "~!@#$%^&*()_+?><:/;'[]{}|\\";
+
+    if(password.length() < 8){
+        System.out.println("Password must be at least 8 characters long");
+        return;
     }
 
-    static void validateEmail(String email){
-        // if(email.contains("@")){
-            
-        //       String[] arr=email.split("@");
-        //           for (int i=0;i<arr.length;i++){
-        //                System.out.println(arr[i]);
-        //              }
-        //   }  
-        //  else{
-        //     System.out.println("invalid");
-        // }
+    for(char ch : password.toCharArray()){
 
-        int a=email.indexOf("@");
-        System.out.println(email.substring(a,email.length()));
-    }
-
-    static void password(String password){
-        boolean res=false;     
-        
-        
-        if (password.contains("~!@#$%^&*()_+*?><:?/;'[]{}|\'")){
-                             res=true;
-                     } 
-                    
-                    
-        // if(password.length()>8){
-        //     for(char ch:password.toCharArray()){
-        //         if (Character.isUpperCase(ch) && Character.isDigit(ch) )
-                     
-        //         }
-        //     }
-    
-
-        if(res==true){
-            System.out.println("valid");
-
+        if(Character.isUpperCase(ch)){
+            upper = true;
         }
-        else{
-            System.out.println("missing");
-        }}
 
+        else if(Character.isLowerCase(ch)){
+            lower = true;
+        }
+
+        else if(Character.isDigit(ch)){
+            digit = true;
+        }
+
+        else if(symbols.indexOf(ch) != -1){
+            special = true;
+        }
     }
 
-    
-
+    if(upper && lower && digit && special){
+        System.out.println("Valid Password");
+    }
+    else{
+        System.out.println("Invalid Password");
+    }
+}
+}

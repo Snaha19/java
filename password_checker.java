@@ -27,7 +27,7 @@ public class password_checker {
 
     }
     public static void main(String[] args) {
-1        String str="/sftyfsxgygfsatr6rt";
+     String str="Sn@h@123";
         System.out.println(check(str));
     }
 }
